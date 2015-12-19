@@ -7,21 +7,30 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
-
-@end
+#import "ContactDao.h"
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
+ContactDao *contact;
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+/*! @brief Add the data typed for the user as a new contact in the address book. */
+- (IBAction) addNewContact
+{
+    contact = [ContactDao new];
+    
+    [contact setName:self.nameField.text];
+    [contact setAddress:self.addressField.text];
+    [contact setEMail:self.eMailField.text];
+    [contact setPhone:self.phoneField.text];
+    [contact setWebSite:self.webSiteField.text];
+    
+    NSLog(@"I'm adding this new contact \nDetails: "
+          "\nName: %@"
+          "\nAddress: %@"
+          "\nE-mail: %@"
+          "\nPhone: %@"
+          "\nWebSite: %@",
+          [contact name], [contact address], [contact eMail], [contact phone], [contact webSite]);
 }
 
 @end

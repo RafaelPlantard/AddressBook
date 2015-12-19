@@ -10,6 +10,11 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UITextField *addressField;
+@property (weak, nonatomic) IBOutlet UITextField *eMailField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneField;
+@property (weak, nonatomic) IBOutlet UITextField *webSiteField;
 
 @end
 
