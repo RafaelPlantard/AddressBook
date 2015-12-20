@@ -13,16 +13,30 @@
 
 ContactDao *contact;
 
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        UIBarButtonItem *addNewContactButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addNewContact)];
+        
+        self.navigationItem.rightBarButtonItem = addNewContactButtonItem;
+        self.navigationItem.title = @"New Contact";
+    }
+    
+    return self;
+}
+
 /*! @brief Add the data typed for the user as a new contact in the address book. */
-- (IBAction) addNewContact
+- (void) addNewContact
 {
     contact = [ContactDao new];
     
-    [contact setName:self.nameField.text];
-    [contact setAddress:self.addressField.text];
-    [contact setEMail:self.eMailField.text];
-    [contact setPhone:self.phoneField.text];
-    [contact setWebSite:self.webSiteField.text];
+    contact.name = self.nameField.text;
+    contact.address = self.addressField.text;
+    contact.eMail = self.eMailField.text;
+    contact.phone = self.phoneField.text;
+    contact.webSite = self.webSiteField.text;
     
     NSLog(@"I'm adding this new contact \nDetails: "
           "\nName: %@"
@@ -30,7 +44,9 @@ ContactDao *contact;
           "\nE-mail: %@"
           "\nPhone: %@"
           "\nWebSite: %@",
-          [contact name], [contact address], [contact eMail], [contact phone], [contact webSite]);
+          contact.name, contact.address, contact.eMail, contact.phone, contact.webSite);
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

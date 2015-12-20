@@ -10,34 +10,19 @@
 
 @interface ContactDao : NSObject
 
-/*! @brief Sets the name. */
-- (void) setName: (NSString *) newName;
+/*! @brief Get and sets the name. */
+@property NSString *name;
 
-/*! @brief Gets the name. */
-- (NSString *) name;
+/*! @brief Gets and sets the address. */
+@property NSString *address;
 
-/*! @brief Sets the address. */
-- (void) setAddress:( NSString *) newAddress;
+/*! @brief Gets and sets the e-mail. */
+@property NSString *eMail;
 
-/*! @brief Gets the address. */
-- (NSString *) address;
+/*! @brief Get and sets the phone. */
+@property NSString *phone;
 
-/*! @brief Sets the e-mail. */
-- (void) setEMail:( NSString *) newEmail;
-
-/*! @brief Gets the e-mail. */
-- (NSString *) eMail;
-
-/*! @brief Sets the phone. */
-- (void) setPhone:( NSString *) newPhone;
-
-/*! @brief Gets the phone. */
-- (NSString *) phone;
-
-/*! @brief Sets the website. */
-- (void) setWebSite:( NSString *) newWebSite;
-
-/*! @brief Gets the website. */
-- (NSString *) webSite;
+/*! @brief Get and sets the website. */
+@property NSString *webSite;
 
 @end
