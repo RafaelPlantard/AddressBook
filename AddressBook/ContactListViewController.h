@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContactDao.h"
 
 /*! @brief Represents the View for show the list of contacts that the user already added. */
 @interface ContactListViewController : UITableViewController
 
-@end
+/*! @brief The data access object for the contact list. */
+@property ContactDao *contactDao;
+
+@end	

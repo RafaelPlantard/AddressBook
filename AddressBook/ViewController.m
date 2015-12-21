@@ -6,47 +6,64 @@
 //  Copyright © 2015 Data Empire. All rights reserved.
 //
 
+#import "Contact.h"
+#import "ContactListViewController.h"
 #import "ViewController.h"
-#import "ContactDao.h"
 
 @implementation ViewController
 
-ContactDao *contact;
+/*! @brief Add the data typed for the user as a new contact in the address book. */
+- (void) addContact {
+    self.contactToWork = [Contact new];
+    
+    [self setUpContactToAddOrEdit];
 
-- (id) initWithCoder:(NSCoder *)aDecoder
-{
+    [self.contactDao addContact:self.contactToWork];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+/*! @brief Edit the current contact that it was selected. */
+- (void) editContact {
+    [self setUpContactToAddOrEdit];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (id) initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     
     if (self) {
-        UIBarButtonItem *addNewContactButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addNewContact)];
-        
-        self.navigationItem.rightBarButtonItem = addNewContactButtonItem;
-        self.navigationItem.title = @"New Contact";
+        self.contactDao = [ContactDao instance];
     }
     
     return self;
 }
 
-/*! @brief Add the data typed for the user as a new contact in the address book. */
-- (void) addNewContact
-{
-    contact = [ContactDao new];
+- (void) setUpContactToAddOrEdit {
+    self.contactToWork.name = self.nameField.text;
+    self.contactToWork.address = self.addressField.text;
+    self.contactToWork.eMail = self.eMailField.text;
+    self.contactToWork.phone = self.phoneField.text;
+    self.contactToWork.webSite = self.webSiteField.text;
+}
+
+- (void) viewDidLoad {
+    [super viewDidLoad];
     
-    contact.name = self.nameField.text;
-    contact.address = self.addressField.text;
-    contact.eMail = self.eMailField.text;
-    contact.phone = self.phoneField.text;
-    contact.webSite = self.webSiteField.text;
-    
-    NSLog(@"I'm adding this new contact \nDetails: "
-          "\nName: %@"
-          "\nAddress: %@"
-          "\nE-mail: %@"
-          "\nPhone: %@"
-          "\nWebSite: %@",
-          contact.name, contact.address, contact.eMail, contact.phone, contact.webSite);
-    
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.contactToWork) {
+        self.nameField.text = self.contactToWork.name;
+        self.addressField.text = self.contactToWork.address;
+        self.eMailField.text = self.contactToWork.eMail;
+        self.phoneField.text = self.contactToWork.phone;
+        self.webSiteField.text = self.contactToWork.webSite;
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Change" style:UIBarButtonItemStylePlain target:self action:@selector(editContact)];
+        self.navigationItem.title = @"Edit Contact";
+    } else {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:@selector(addContact)];
+        self.navigationItem.title = @"New Contact";
+    }
 }
 
 @end

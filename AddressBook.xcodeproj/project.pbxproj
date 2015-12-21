@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E2CBAAC1C2496BE00CC63D0 /* ContactDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2CBAAB1C2496BE00CC63D0 /* ContactDao.m */; };
+		7E2CBAAC1C2496BE00CC63D0 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2CBAAB1C2496BE00CC63D0 /* Contact.m */; };
 		7EC981461C1EDB650036E7A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC981451C1EDB650036E7A4 /* main.m */; };
 		7EC981491C1EDB650036E7A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC981481C1EDB650036E7A4 /* AppDelegate.m */; };
 		7EC9814C1C1EDB650036E7A4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9814B1C1EDB650036E7A4 /* ViewController.m */; };
@@ -18,6 +18,7 @@
 		7EC981621C1EDB660036E7A4 /* AddressBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC981611C1EDB660036E7A4 /* AddressBookTests.m */; };
 		7EC9816D1C1EDB660036E7A4 /* AddressBookUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9816C1C1EDB660036E7A4 /* AddressBookUITests.m */; };
 		7EE2E2601C262D890044DF53 /* ContactListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE2E25F1C262D890044DF53 /* ContactListViewController.m */; };
+		7EE2E2661C278EDD0044DF53 /* ContactDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EE2E2651C278EDC0044DF53 /* ContactDao.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7E2CBAAA1C2496BE00CC63D0 /* ContactDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDao.h; sourceTree = "<group>"; };
-		7E2CBAAB1C2496BE00CC63D0 /* ContactDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDao.m; sourceTree = "<group>"; };
+		7E2CBAAA1C2496BE00CC63D0 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		7E2CBAAB1C2496BE00CC63D0 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		7EC981411C1EDB650036E7A4 /* AddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC981451C1EDB650036E7A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7EC981471C1EDB650036E7A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,6 +60,8 @@
 		7EC9816E1C1EDB660036E7A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EE2E25E1C262D890044DF53 /* ContactListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListViewController.h; sourceTree = "<group>"; };
 		7EE2E25F1C262D890044DF53 /* ContactListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactListViewController.m; sourceTree = "<group>"; };
+		7EE2E2641C278EDC0044DF53 /* ContactDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDao.h; sourceTree = "<group>"; };
+		7EE2E2651C278EDC0044DF53 /* ContactDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDao.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +92,8 @@
 		7E2CBAA91C24968B00CC63D0 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				7E2CBAAA1C2496BE00CC63D0 /* ContactDao.h */,
-				7E2CBAAB1C2496BE00CC63D0 /* ContactDao.m */,
+				7E2CBAAA1C2496BE00CC63D0 /* Contact.h */,
+				7E2CBAAB1C2496BE00CC63D0 /* Contact.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -118,6 +121,7 @@
 		7EC981431C1EDB650036E7A4 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
+				7EE2E2621C278EB80044DF53 /* DAOs */,
 				7EE2E25D1C262D540044DF53 /* ViewControllers */,
 				7E2CBAA91C24968B00CC63D0 /* Entities */,
 				7EC981471C1EDB650036E7A4 /* AppDelegate.h */,
@@ -167,6 +171,15 @@
 				7EE2E25F1C262D890044DF53 /* ContactListViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7EE2E2621C278EB80044DF53 /* DAOs */ = {
+			isa = PBXGroup;
+			children = (
+				7EE2E2641C278EDC0044DF53 /* ContactDao.h */,
+				7EE2E2651C278EDC0044DF53 /* ContactDao.m */,
+			);
+			name = DAOs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,7 +316,8 @@
 				7EE2E2601C262D890044DF53 /* ContactListViewController.m in Sources */,
 				7EC981521C1EDB650036E7A4 /* AddressBook.xcdatamodeld in Sources */,
 				7EC981491C1EDB650036E7A4 /* AppDelegate.m in Sources */,
-				7E2CBAAC1C2496BE00CC63D0 /* ContactDao.m in Sources */,
+				7EE2E2661C278EDD0044DF53 /* ContactDao.m in Sources */,
+				7E2CBAAC1C2496BE00CC63D0 /* Contact.m in Sources */,
 				7EC981461C1EDB650036E7A4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
