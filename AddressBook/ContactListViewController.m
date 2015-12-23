@@ -7,8 +7,6 @@
 //
 
 #import "ContactListViewController.h"
-#import "Contact.h"
-#import "ViewController.h"
 
 @implementation ContactListViewController
 
@@ -30,9 +28,11 @@ Contact *selectedContact;
 /*! @brief Go to the ViewController that contains the form for add a new contact */
 - (void) goToAddViewController {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
     ViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"AddContactForm"];
     
     viewController.contactToWork = selectedContact;
+    viewController.delegate = self;
     
     selectedContact = nil;
     
@@ -55,6 +55,14 @@ Contact *selectedContact;
     return self;
 }
 
+- (void)setAddedContact:(Contact *)contact {
+    NSLog(@"Adding this contact %@", contact);
+}
+
+- (void)setUpdatedContact:(Contact *)contact {
+    NSLog(@"Updating this contact: %@", contact);
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Contact *currentContact = [self.contactDao contactAtIndex:indexPath.row];
     
@@ -65,7 +73,7 @@ Contact *selectedContact;
     }
     
     tableViewCell.textLabel.text = currentContact.name;
-
+    
     return tableViewCell;
 }
 

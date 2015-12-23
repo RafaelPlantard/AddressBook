@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ContactDao.h"
+
+/*! @brief Delegate to alert view controllers that we add or edit a specific contact. */
+@protocol ViewControllerDelegate <NSObject>
+
+@required
+/*! @brief It will alert the list that a specific contact was added. */
+- (void) setAddedContact: (Contact *) contact;
+
+/*! @brief It will alert the list that a specific contact was changed. */
+- (void) setUpdatedContact: (Contact *) contact;
+
+@end
+
+/*! @brief Responsible for get the data to add or edit a contact in the contact list. */
 @interface ViewController : UIViewController
 
 /*! @brief Represents the field for get the name of a new contact. */
@@ -30,5 +45,8 @@
 
 /*! @brief The selected contact to editing scope. */
 @property Contact *contactToWork;
+
+/*! @brief A delegate that process some actions when I add or update a contact. */
+@property id<ViewControllerDelegate> delegate;
 
 @end

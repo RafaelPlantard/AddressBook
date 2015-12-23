@@ -6,19 +6,19 @@
 //  Copyright © 2015 Data Empire. All rights reserved.
 //
 
-#import "Contact.h"
-#import "ContactListViewController.h"
 #import "ViewController.h"
 
 @implementation ViewController
 
 /*! @brief Add the data typed for the user as a new contact in the address book. */
-- (void) addContact {
+- (void) addContact {	
     self.contactToWork = [Contact new];
     
     [self setUpContactToAddOrEdit];
-
+    
     [self.contactDao addContact:self.contactToWork];
+    
+    [self.delegate setAddedContact:self.contactToWork];
     
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -26,6 +26,8 @@
 /*! @brief Edit the current contact that it was selected. */
 - (void) editContact {
     [self setUpContactToAddOrEdit];
+    
+    [self.delegate setUpdatedContact:self.contactToWork];
     
     [self.navigationController popViewControllerAnimated:YES];
 }
