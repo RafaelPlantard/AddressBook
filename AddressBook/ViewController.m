@@ -18,9 +18,9 @@
     
     [self.contactDao addContact:self.contactToWork];
     
-    [self.delegate setAddedContact:self.contactToWork];
-    
     [self.navigationController popViewControllerAnimated:YES];
+    
+    [self.delegate setAddedContact:self.contactToWork];
 }
 
 /*! @brief Edit the current contact that it was selected. */
@@ -42,6 +42,7 @@
     return self;
 }
 
+/*! @brief Just fill the contact object with the data typed for the user. */
 - (void) setUpContactToAddOrEdit {
     self.contactToWork.name = self.nameField.text;
     self.contactToWork.address = self.addressField.text;

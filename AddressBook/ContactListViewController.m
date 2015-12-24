@@ -16,6 +16,9 @@ NSString *contactListReuseIdentifier = @"ContactListReuseId";
 /*! @brief Selected contact for editing. */
 Contact *selectedContact;
 
+/*! @brief Represents the line of the table that it was changed (added or updated). */
+NSInteger lastIndexChanged;
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Contact *contactToDelete = [self.contactDao contactAtIndex:indexPath.row];
@@ -50,17 +53,29 @@ Contact *selectedContact;
         self.navigationItem.title = @"Address Book";
         
         self.contactDao = [ContactDao instance];
+        
+        lastIndexChanged = -1;
     }
     
     return self;
 }
 
 - (void)setAddedContact:(Contact *)contact {
-    NSLog(@"Adding this contact %@", contact);
+    lastIndexChanged = [self.contactDao indexByContact:contact];
+    
+    NSString *message = [NSString stringWithFormat:@"New contact: %@", contact.name];
+    
+    UIAlertController *addedAlertController = [UIAlertController alertControllerWithTitle:@"Contact added" message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *continueAction = [UIAlertAction actionWithTitle:@"continue" style:UIAlertActionStyleCancel handler:nil];
+    
+    [addedAlertController addAction:continueAction];
+    
+    [self presentViewController:addedAlertController animated:YES completion:nil];
 }
 
 - (void)setUpdatedContact:(Contact *)contact {
-    NSLog(@"Updating this contact: %@", contact);
+    lastIndexChanged = [self.contactDao indexByContact:contact];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -85,6 +100,14 @@ Contact *selectedContact;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.contactDao.total;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastIndexChanged inSection:0];
+    
+    [self.tableView selectRowAtIndexPath:indexPath animated:animated scrollPosition:UITableViewScrollPositionNone];
+    
+    lastIndexChanged = -1;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

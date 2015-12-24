@@ -24,6 +24,10 @@ NSMutableArray *contactList;
     return contactList[index];
 }
 
+- (NSInteger)indexByContact:(Contact *)contact {
+    return [contactList indexOfObject:contact];
+}
+
 - (id)init
 {
     self = [super init];

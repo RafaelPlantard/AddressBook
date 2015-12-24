@@ -18,6 +18,9 @@
 /*! @brief Returns a contact that exists in a specific position at the list */
 - (Contact *) contactAtIndex : (NSInteger) index;
 
+/*! */
+- (NSInteger) indexByContact : (Contact *) contact;
+
 /*! @brief Generates a single instance of this DAO. */
 + (id) instance;
 
