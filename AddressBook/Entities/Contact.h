@@ -7,22 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Mantle.h>
 
-@interface Contact : NSObject
+@interface Contact : MTLModel<MTLJSONSerializing>
+
+/*! @brief Contact identifier. */
+@property (nonatomic, readonly) NSString *objectId;
+
+/*! @brief Date that this object was created. */
+@property (nonatomic, readonly) NSDate *createdAt;
+
+/*! @brief Last update on object. */
+@property (nonatomic, readonly) NSDate *updatedAt;
 
 /*! @brief Get and sets the name. */
-@property NSString *name;
+@property (nonatomic, copy) NSString *name;
 
 /*! @brief Gets and sets the address. */
-@property NSString *address;
+@property (nonatomic, copy) NSString *address;
 
 /*! @brief Gets and sets the e-mail. */
-@property NSString *eMail;
+@property (nonatomic, copy) NSString *eMail;
 
 /*! @brief Get and sets the phone. */
-@property NSString *phone;
+@property (nonatomic, copy) NSString *phone;
 
 /*! @brief Get and sets the website. */
-@property NSString *webSite;
+@property (nonatomic, copy) NSString *webSite;
 
 @end

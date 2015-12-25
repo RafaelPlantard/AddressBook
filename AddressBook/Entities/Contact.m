@@ -22,4 +22,17 @@
     return data;
 }
 
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+             @"objectId": @"objectId",
+             @"createdAt": @"createdAt",
+             @"updatedAt": @"updatedAt",
+             @"name": @"name",
+             @"address": @"address",
+             @"eMail": @"emailAddress",
+             @"phone": @"phoneNumber",
+             @"webSite": @"webSite"
+             };
+}
+
 @end
