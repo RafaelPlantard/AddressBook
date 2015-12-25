@@ -7,25 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Contact.h"
+#import "ContactModel.h"
 
 /* @brief The object that can be used to access the list of contacts and manipulate it. */
 @interface ContactDao : NSObject
 
 /*! @brief Add a new contact */
-- (void) addContact : (Contact *) contact;
+- (void) addContact : (ContactModel *) contact;
 
 /*! @brief Returns a contact that exists in a specific position at the list */
-- (Contact *) contactAtIndex : (NSInteger) index;
+- (ContactModel *) contactAtIndex : (NSInteger) index;
 
 /*! */
-- (NSInteger) indexByContact : (Contact *) contact;
+- (NSInteger) indexByContact : (ContactModel *) contact;
 
 /*! @brief Generates a single instance of this DAO. */
 + (id) instance;
 
 /*! @brief Removes a specific contact. */
-- (void) removeContact : (Contact *) contact;
+- (void) removeContact : (ContactModel *) contact;
 
 /*! @brief Gets the total of contact added in the list */
 - (NSInteger) total;

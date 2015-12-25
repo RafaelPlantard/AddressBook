@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E2CBAAC1C2496BE00CC63D0 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2CBAAB1C2496BE00CC63D0 /* Contact.m */; };
+		53C0D7911C2DE415002C614F /* SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C0D7901C2DE415002C614F /* SessionManager.m */; };
+		53C0D7941C2DE425002C614F /* ApiManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C0D7931C2DE425002C614F /* ApiManager.m */; };
+		53C0D7971C2DE89F002C614F /* ContactListResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53C0D7961C2DE89F002C614F /* ContactListResponseModel.m */; };
+		7E2CBAAC1C2496BE00CC63D0 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E2CBAAB1C2496BE00CC63D0 /* ContactModel.m */; };
 		7EC981461C1EDB650036E7A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC981451C1EDB650036E7A4 /* main.m */; };
 		7EC981491C1EDB650036E7A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC981481C1EDB650036E7A4 /* AppDelegate.m */; };
 		7EC9814C1C1EDB650036E7A4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC9814B1C1EDB650036E7A4 /* ViewController.m */; };
@@ -41,9 +44,15 @@
 
 /* Begin PBXFileReference section */
 		454F954339D531ACE6E47BBB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		53C0D78F1C2DE415002C614F /* SessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionManager.h; sourceTree = "<group>"; };
+		53C0D7901C2DE415002C614F /* SessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionManager.m; sourceTree = "<group>"; };
+		53C0D7921C2DE425002C614F /* ApiManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiManager.h; sourceTree = "<group>"; };
+		53C0D7931C2DE425002C614F /* ApiManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiManager.m; sourceTree = "<group>"; };
+		53C0D7951C2DE89F002C614F /* ContactListResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListResponseModel.h; sourceTree = "<group>"; };
+		53C0D7961C2DE89F002C614F /* ContactListResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactListResponseModel.m; sourceTree = "<group>"; };
 		6AA708A5C38DF1A0C9FF3E44 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7E2CBAAA1C2496BE00CC63D0 /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
-		7E2CBAAB1C2496BE00CC63D0 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		7E2CBAAA1C2496BE00CC63D0 /* ContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
+		7E2CBAAB1C2496BE00CC63D0 /* ContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
 		7EC981411C1EDB650036E7A4 /* AddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EC981451C1EDB650036E7A4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7EC981471C1EDB650036E7A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,13 +103,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7E2CBAA91C24968B00CC63D0 /* Entities */ = {
+		53C0D78D1C2DE39F002C614F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7E2CBAAA1C2496BE00CC63D0 /* Contact.h */,
-				7E2CBAAB1C2496BE00CC63D0 /* Contact.m */,
+				53C0D78F1C2DE415002C614F /* SessionManager.h */,
+				53C0D7901C2DE415002C614F /* SessionManager.m */,
+				53C0D7921C2DE425002C614F /* ApiManager.h */,
+				53C0D7931C2DE425002C614F /* ApiManager.m */,
 			);
-			path = Entities;
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7E2CBAA91C24968B00CC63D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7E2CBAAA1C2496BE00CC63D0 /* ContactModel.h */,
+				7E2CBAAB1C2496BE00CC63D0 /* ContactModel.m */,
+				53C0D7951C2DE89F002C614F /* ContactListResponseModel.h */,
+				53C0D7961C2DE89F002C614F /* ContactListResponseModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7EC981381C1EDB650036E7A4 = {
@@ -128,8 +150,9 @@
 		7EC981431C1EDB650036E7A4 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
+				53C0D78D1C2DE39F002C614F /* Network */,
 				7EE2E2621C278EB80044DF53 /* DAOs */,
-				7E2CBAA91C24968B00CC63D0 /* Entities */,
+				7E2CBAA91C24968B00CC63D0 /* Models */,
 				7EC981441C1EDB650036E7A4 /* Supporting Files */,
 				7EE2E25D1C262D540044DF53 /* ViewControllers */,
 				7EC981501C1EDB650036E7A4 /* AddressBook.xcdatamodeld */,
@@ -390,10 +413,13 @@
 			files = (
 				7EC9814C1C1EDB650036E7A4 /* ViewController.m in Sources */,
 				7EE2E2601C262D890044DF53 /* ContactListViewController.m in Sources */,
+				53C0D7941C2DE425002C614F /* ApiManager.m in Sources */,
+				53C0D7911C2DE415002C614F /* SessionManager.m in Sources */,
 				7EC981521C1EDB650036E7A4 /* AddressBook.xcdatamodeld in Sources */,
 				7EC981491C1EDB650036E7A4 /* AppDelegate.m in Sources */,
 				7EE2E2661C278EDD0044DF53 /* ContactDao.m in Sources */,
-				7E2CBAAC1C2496BE00CC63D0 /* Contact.m in Sources */,
+				7E2CBAAC1C2496BE00CC63D0 /* ContactModel.m in Sources */,
+				53C0D7971C2DE89F002C614F /* ContactListResponseModel.m in Sources */,
 				7EC981461C1EDB650036E7A4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,14 +14,14 @@
 NSString *contactListReuseIdentifier = @"ContactListReuseId";
 
 /*! @brief Selected contact for editing. */
-Contact *selectedContact;
+ContactModel *selectedContact;
 
 /*! @brief Represents the line of the table that it was changed (added or updated). */
 NSInteger lastIndexChanged;
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Contact *contactToDelete = [self.contactDao contactAtIndex:indexPath.row];
+        ContactModel *contactToDelete = [self.contactDao contactAtIndex:indexPath.row];
         
         [self.contactDao removeContact:contactToDelete];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -60,7 +60,7 @@ NSInteger lastIndexChanged;
     return self;
 }
 
-- (void)setAddedContact:(Contact *)contact {
+- (void)setAddedContact:(ContactModel *)contact {
     lastIndexChanged = [self.contactDao indexByContact:contact];
     
     NSString *message = [NSString stringWithFormat:@"New contact: %@", contact.name];
@@ -74,12 +74,12 @@ NSInteger lastIndexChanged;
     [self presentViewController:addedAlertController animated:YES completion:nil];
 }
 
-- (void)setUpdatedContact:(Contact *)contact {
+- (void)setUpdatedContact:(ContactModel *)contact {
     lastIndexChanged = [self.contactDao indexByContact:contact];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Contact *currentContact = [self.contactDao contactAtIndex:indexPath.row];
+    ContactModel *currentContact = [self.contactDao contactAtIndex:indexPath.row];
     
     UITableViewCell *tableViewCell = [tableView dequeueReusableCellWithIdentifier:contactListReuseIdentifier];
     

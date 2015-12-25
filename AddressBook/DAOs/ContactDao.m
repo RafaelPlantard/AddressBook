@@ -16,15 +16,15 @@ static ContactDao *instance;
 /*! @brief Contains a primary list of contacts. */
 NSMutableArray *contactList;
 
-- (void)addContact:(Contact *)contact {
+- (void)addContact:(ContactModel *)contact {
     [contactList addObject:contact];
 }
 
-- (Contact *)contactAtIndex:(NSInteger)index {
+- (ContactModel *)contactAtIndex:(NSInteger)index {
     return contactList[index];
 }
 
-- (NSInteger)indexByContact:(Contact *)contact {
+- (NSInteger)indexByContact:(ContactModel *)contact {
     return [contactList indexOfObject:contact];
 }
 
@@ -47,7 +47,7 @@ NSMutableArray *contactList;
     return instance;
 }
 
-- (void)removeContact:(Contact *)contact {
+- (void)removeContact:(ContactModel *)contact {
     [contactList removeObject:contact];
 }
 

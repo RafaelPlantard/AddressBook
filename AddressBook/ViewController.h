@@ -15,10 +15,10 @@
 
 @required
 /*! @brief It will alert the list that a specific contact was added. */
-- (void) setAddedContact: (Contact *) contact;
+- (void) setAddedContact: (ContactModel *) contact;
 
 /*! @brief It will alert the list that a specific contact was changed. */
-- (void) setUpdatedContact: (Contact *) contact;
+- (void) setUpdatedContact: (ContactModel *) contact;
 
 @end
 
@@ -44,7 +44,7 @@
 @property ContactDao *contactDao;
 
 /*! @brief The selected contact to editing scope. */
-@property Contact *contactToWork;
+@property ContactModel *contactToWork;
 
 /*! @brief A delegate that process some actions when I add or update a contact. */
 @property id<ViewControllerDelegate> delegate;

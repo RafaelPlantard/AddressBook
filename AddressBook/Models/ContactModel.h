@@ -6,10 +6,11 @@
 //  Copyright © 2015 Data Empire. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <Mantle.h>
 
-@interface Contact : MTLModel<MTLJSONSerializing>
+#import "MTLModel.h"
+#import <Mantle/Mantle.h>
+
+@interface ContactModel : MTLModel<MTLJSONSerializing>
 
 /*! @brief Contact identifier. */
 @property (nonatomic, readonly) NSString *objectId;

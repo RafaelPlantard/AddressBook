@@ -12,7 +12,7 @@
 
 /*! @brief Add the data typed for the user as a new contact in the address book. */
 - (void) addContact {	
-    self.contactToWork = [Contact new];
+    self.contactToWork = [ContactModel new];
     
     [self setUpContactToAddOrEdit];
     

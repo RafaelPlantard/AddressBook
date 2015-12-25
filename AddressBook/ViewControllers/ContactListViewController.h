@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "Contact.h"
+#import "ContactModel.h"
 #import "ContactDao.h"
 #import "ViewController.h"
 
