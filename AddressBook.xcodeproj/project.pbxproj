@@ -100,7 +100,7 @@
 				7E2CBAAA1C2496BE00CC63D0 /* Contact.h */,
 				7E2CBAAB1C2496BE00CC63D0 /* Contact.m */,
 			);
-			name = Entities;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		7EC981381C1EDB650036E7A4 = {
@@ -109,9 +109,9 @@
 				7EC981431C1EDB650036E7A4 /* AddressBook */,
 				7EC981601C1EDB660036E7A4 /* AddressBookTests */,
 				7EC9816B1C1EDB660036E7A4 /* AddressBookUITests */,
-				7EC981421C1EDB650036E7A4 /* Products */,
-				F247FE1E234293C3459FDD82 /* Pods */,
 				FB3D5E2981A853D096ABCEF6 /* Frameworks */,
+				F247FE1E234293C3459FDD82 /* Pods */,
+				7EC981421C1EDB650036E7A4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,15 +132,15 @@
 				7E2CBAA91C24968B00CC63D0 /* Entities */,
 				7EC981441C1EDB650036E7A4 /* Supporting Files */,
 				7EE2E25D1C262D540044DF53 /* ViewControllers */,
+				7EC981501C1EDB650036E7A4 /* AddressBook.xcdatamodeld */,
 				7EC981471C1EDB650036E7A4 /* AppDelegate.h */,
 				7EC981481C1EDB650036E7A4 /* AppDelegate.m */,
+				7EC981531C1EDB650036E7A4 /* Assets.xcassets */,
+				7EC981581C1EDB650036E7A4 /* Info.plist */,
+				7EC981551C1EDB650036E7A4 /* LaunchScreen.storyboard */,
+				7EC9814D1C1EDB650036E7A4 /* Main.storyboard */,
 				7EC9814A1C1EDB650036E7A4 /* ViewController.h */,
 				7EC9814B1C1EDB650036E7A4 /* ViewController.m */,
-				7EC9814D1C1EDB650036E7A4 /* Main.storyboard */,
-				7EC981531C1EDB650036E7A4 /* Assets.xcassets */,
-				7EC981551C1EDB650036E7A4 /* LaunchScreen.storyboard */,
-				7EC981581C1EDB650036E7A4 /* Info.plist */,
-				7EC981501C1EDB650036E7A4 /* AddressBook.xcdatamodeld */,
 			);
 			path = AddressBook;
 			sourceTree = "<group>";
@@ -150,7 +150,7 @@
 			children = (
 				7EC981451C1EDB650036E7A4 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		7EC981601C1EDB660036E7A4 /* AddressBookTests */ = {
@@ -177,7 +177,7 @@
 				7EE2E25E1C262D890044DF53 /* ContactListViewController.h */,
 				7EE2E25F1C262D890044DF53 /* ContactListViewController.m */,
 			);
-			name = ViewControllers;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		7EE2E2621C278EB80044DF53 /* DAOs */ = {
@@ -186,7 +186,7 @@
 				7EE2E2641C278EDC0044DF53 /* ContactDao.h */,
 				7EE2E2651C278EDC0044DF53 /* ContactDao.m */,
 			);
-			name = DAOs;
+			path = DAOs;
 			sourceTree = "<group>";
 		};
 		F247FE1E234293C3459FDD82 /* Pods */ = {
@@ -436,6 +436,7 @@
 				7EC9814E1C1EDB650036E7A4 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		7EC981551C1EDB650036E7A4 /* LaunchScreen.storyboard */ = {
@@ -444,6 +445,7 @@
 				7EC981561C1EDB650036E7A4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
