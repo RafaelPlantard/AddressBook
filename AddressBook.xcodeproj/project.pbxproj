@@ -106,10 +106,10 @@
 		53C0D78D1C2DE39F002C614F /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				53C0D78F1C2DE415002C614F /* SessionManager.h */,
-				53C0D7901C2DE415002C614F /* SessionManager.m */,
 				53C0D7921C2DE425002C614F /* ApiManager.h */,
 				53C0D7931C2DE425002C614F /* ApiManager.m */,
+				53C0D78F1C2DE415002C614F /* SessionManager.h */,
+				53C0D7901C2DE415002C614F /* SessionManager.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -117,10 +117,10 @@
 		7E2CBAA91C24968B00CC63D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7E2CBAAA1C2496BE00CC63D0 /* ContactModel.h */,
-				7E2CBAAB1C2496BE00CC63D0 /* ContactModel.m */,
 				53C0D7951C2DE89F002C614F /* ContactListResponseModel.h */,
 				53C0D7961C2DE89F002C614F /* ContactListResponseModel.m */,
+				7E2CBAAA1C2496BE00CC63D0 /* ContactModel.h */,
+				7E2CBAAB1C2496BE00CC63D0 /* ContactModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,9 +150,9 @@
 		7EC981431C1EDB650036E7A4 /* AddressBook */ = {
 			isa = PBXGroup;
 			children = (
-				53C0D78D1C2DE39F002C614F /* Network */,
 				7EE2E2621C278EB80044DF53 /* DAOs */,
 				7E2CBAA91C24968B00CC63D0 /* Models */,
+				53C0D78D1C2DE39F002C614F /* Network */,
 				7EC981441C1EDB650036E7A4 /* Supporting Files */,
 				7EE2E25D1C262D540044DF53 /* ViewControllers */,
 				7EC981501C1EDB650036E7A4 /* AddressBook.xcdatamodeld */,
