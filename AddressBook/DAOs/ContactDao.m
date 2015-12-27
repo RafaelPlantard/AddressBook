@@ -6,6 +6,7 @@
 //  Copyright © 2015 Data Empire. All rights reserved.
 //
 
+#import "ApiManager.h"
 #import "ContactDao.h"
 
 @implementation ContactDao
@@ -33,7 +34,18 @@ NSMutableArray *contactList;
     self = [super init];
     
     if (self) {
-        contactList = [NSMutableArray new];
+        //contactList = [NSMutableArray new];
+        [[ApiManager sharedManager] getContacts:^(ContactListResponseModel *responseModel) {
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                @autoreleasepool {
+                    contactList = [NSMutableArray new];
+                    [contactList addObjectsFromArray:responseModel.contactList];
+                }
+            });
+        } failure:^(NSError *error) {
+            NSLog(@"Failed on get contacts");
+        }];
+        
     }
     
     return self;

@@ -6,7 +6,6 @@
 //  Copyright © 2015 Data Empire. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import "ContactModel.h"
 
 /* @brief The object that can be used to access the list of contacts and manipulate it. */

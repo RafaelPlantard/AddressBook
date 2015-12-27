@@ -13,6 +13,7 @@
 /*! @brief Represents my contact list from RESTFull API. */
 @interface ContactListResponseModel : MTLModel<MTLJSONSerializing>
 
+/*! @brief Represents the contact list bring from Parse App. */
 @property (nonatomic, copy) NSArray *contactList;
 
 @end

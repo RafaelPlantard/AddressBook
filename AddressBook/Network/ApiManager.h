@@ -6,8 +6,13 @@
 //  Copyright © 2015 Data Empire. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SessionManager.h"
+#import "ContactListResponseModel.h"
 
-@interface ApiManager : NSObject
+/*! @brief Represents all API calls that my application have. */
+@interface ApiManager : SessionManager
+
+/*! @brief Get the list of contacts. */
+- (NSURLSessionDataTask *) getContacts: (void (^) (ContactListResponseModel *responseModel))success failure: (void (^) (NSError *error))failure;
 
 @end

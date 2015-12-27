@@ -11,6 +11,12 @@
 /*! @brief The base url for calls to API. */
 static NSString *const kBaseURL = @"https://api.parse.com";
 
+/*! @brief The Application Identifier for this on Parse API. */
+static NSString *const kApplicationId = @"SiBreOD4bO0gSQVH04j3Tm63BOPuc7Lns9QKJhzn";
+
+/*! @brief The REST API Key for access the APIs on this Parse App. */
+static NSString *const kRestApiKey = @"EJR4DAMPu5pHiS7YGUYKlX7f2flti60HyqoSNcpu";
+
 @implementation SessionManager
 
 - (id) init {
@@ -18,6 +24,10 @@ static NSString *const kBaseURL = @"https://api.parse.com";
     
     if (self) {
         self.requestSerializer = [AFJSONRequestSerializer serializer];
+        
+        [self.requestSerializer setValue:kApplicationId forHTTPHeaderField:@"X-Parse-Application-Id"];
+        [self.requestSerializer setValue:kRestApiKey forHTTPHeaderField:@"X-Parse-REST-API-Key"];
+        
         self.responseSerializer = [AFJSONResponseSerializer serializer];
     }
     
