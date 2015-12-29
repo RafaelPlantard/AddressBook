@@ -13,6 +13,6 @@
 @interface ApiManager : SessionManager
 
 /*! @brief Get the list of contacts. */
-- (NSURLSessionDataTask *) getContacts: (void (^) (ContactListResponseModel *responseModel))success failure: (void (^) (NSError *error))failure;
+- (NSURLSessionDataTask *) getContacts:(void (^)(ContactListResponseModel *responseModel))success failure:(void (^)(NSError *error))failure;
 
 @end
